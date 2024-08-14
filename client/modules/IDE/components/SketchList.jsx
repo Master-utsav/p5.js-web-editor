@@ -146,11 +146,8 @@ class SketchListRowBase extends React.Component {
             {this.props.t('SketchList.DropdownAddToCollection')}
           </MenuItem>
 
-          {/*
-          <MenuItem onClick={this.handleSketchShare}>
-            Share
-          </MenuItem>
-            */}
+          <MenuItem onClick={this.handleSketchShare}>Share</MenuItem>
+
           <MenuItem hideIf={!userIsOwner} onClick={this.handleSketchDelete}>
             {this.props.t('SketchList.DropdownDelete')}
           </MenuItem>
@@ -185,18 +182,16 @@ class SketchListRowBase extends React.Component {
     );
 
     return (
-      <React.Fragment>
-        <tr
-          className="sketches-table__row"
-          key={sketch.id}
-          onClick={this.handleRowClick}
-        >
-          <th scope="row">{name}</th>
-          <td>{formatDateCell(sketch.createdAt, mobile)}</td>
-          <td>{formatDateCell(sketch.updatedAt, mobile)}</td>
-          {this.renderDropdown()}
-        </tr>
-      </React.Fragment>
+      <tr
+        className="sketches-table__row"
+        key={sketch.id}
+        onClick={this.handleRowClick}
+      >
+        <th scope="row">{name}</th>
+        <td>{formatDateCell(sketch.createdAt, mobile)}</td>
+        <td>{formatDateCell(sketch.updatedAt, mobile)}</td>
+        {this.renderDropdown()}
+      </tr>
     );
   }
 }

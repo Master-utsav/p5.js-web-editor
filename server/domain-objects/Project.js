@@ -31,7 +31,7 @@ export function toApi(model) {
  * - each file/folder gets a generated BSON-ID
  * - each folder has a `children` array containing the IDs of it's children
  */
-function transformFilesInner(tree = {}, parentNode) {
+function transformFilesInner(parentNode, tree = {}) {
   const files = [];
   const errors = [];
 

@@ -19,6 +19,8 @@ export default function useKeyDownHandlers(keyHandlers) {
    */
   const handlers = useRef(keyHandlers);
 
+  console.log('handlers: ', handlers);
+
   useEffect(() => {
     handlers.current = mapKeys(keyHandlers, (value, key) => key?.toLowerCase());
   }, [keyHandlers]);
@@ -65,4 +67,8 @@ export const DocumentKeyDown = ({ handlers }) => {
 };
 DocumentKeyDown.propTypes = {
   handlers: PropTypes.objectOf(PropTypes.func)
+};
+
+DocumentKeyDown.defaultProps = {
+  handlers: {} // Provide a default empty object for handlers
 };

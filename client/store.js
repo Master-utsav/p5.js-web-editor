@@ -1,3 +1,5 @@
+/* eslint-disable import/no-import-module-exports */
+
 import { configureStore } from '@reduxjs/toolkit';
 import listenerMiddleware from './middleware';
 import DevTools from './modules/App/components/DevTools';
